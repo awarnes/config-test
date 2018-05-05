@@ -1,30 +1,45 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isString } from '../utils/TypeUtils'
+import TextField from 'material-ui/TextField'
 
 export default class JSONString extends React.Component {
   constructor (props) {
     super(props)
+    const { data } = this.props
 
-    this.state = {
-      value: ''
+    if (isString(data)) {
+      this.state = {
+        data,
+        error: ""
+      }
+    } else {
+      this.state = {
+        data: "",
+        error: "Invalid type. Please enter a String."
+      }
     }
 
-    this.updateValue = this.updateValue.bind(this)
+    this.updateData = this.updateData.bind(this)
   }
 
-  updateValue (e) {
-    this.setState({ value: e.target.value })
+  updateData (e) {
+    this.setState({ data: e.target.value })
   }
 
   render () {
+    const { data, error } = this.state
     return (
-      <div>
-        <input type="text" value={this.state.value} onChange={this.updateValue}/>
-      </div>
+      <TextField
+        type="text"
+        value={data}
+        errorText={error}
+        onChange={this.updateData}
+      />
     )
   }
 }
 
 JSONString.propTypes = {
-
+  data: PropTypes.string
 }
