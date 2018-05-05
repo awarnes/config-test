@@ -6,20 +6,20 @@ export default class JSONString extends React.Component {
     super(props)
 
     this.state = {
-      value: ''
+      data: ''
     }
 
-    this.updateValue = this.updateValue.bind(this)
+    this.updatedata = this.updatedata.bind(this)
   }
 
-  updateValue (e) {
-    this.setState({ value: e.target.value })
+  updatedata (e) {
+    this.setState({ data: e.target.data })
   }
 
   render () {
     return (
       <div>
-        <input type="text" value={this.state.value} onChange={this.updateValue}/>
+        <input type="text" data={this.state.data} onChange={this.updatedata}/>
       </div>
     )
   }

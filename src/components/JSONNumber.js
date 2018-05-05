@@ -6,35 +6,35 @@ import TextField from 'material-ui/TextField'
 export default class JSONNumber extends React.Component {
   constructor (props) {
     super(props)
-    const { value } = this.props
+    const { data } = this.props
 
-    if (isNumber(value)) {
+    if (isNumber(data)) {
       this.state = {
-        value,
+        data,
         error: ""
       }
     } else {
       this.state = {
-        value: 0,
+        data: 0,
         error: "Invalid type. Please enter a number."
       }
     }
 
-    this.updateValue = this.updateValue.bind(this)
+    this.updatedata = this.updatedata.bind(this)
   }
 
-  updateValue (e) {
-    this.setState({ value: e.target.value })
+  updatedata (e) {
+    this.setState({ data: e.target.data })
   }
 
   render () {
-    const { value, error } = this.state
+    const { data, error } = this.state
     return (
       <div>
         <TextField
           type="number"
-          value={value}
-          onChange={this.updateValue}
+          data={data}
+          onChange={this.updatedata}
           errorText={error}
         />
       </div>
@@ -43,5 +43,5 @@ export default class JSONNumber extends React.Component {
 }
 
 JSONNumber.propTypes = {
-  value: PropTypes.number
+  data: PropTypes.number
 }

@@ -9,31 +9,31 @@ describe("The JSONNumber component performs basic functions", () => {
     let number
 
     beforeEach(() => {
-      number = shallow(<JSONNumber value={10} />)
+      number = shallow(<JSONNumber data={10} />)
     })
 
     it("Stores a number", () => {
-      expect(typeof number.state().value === "number").toBe(true)
+      expect(typeof number.state().data).toBe("number")
     })
 
-    it("Stores a specific number value", () => {
-      expect(number.state().value).toBe(10)
+    it("Stores a specific number data", () => {
+      expect(number.state().data).toBe(10)
     })
 
-    it("Can store decimal values as well", () => {
-      number = shallow(<JSONNumber value={.10} />)
-      expect(number.state().value).toBe(.10)
+    it("Can store decimal datas as well", () => {
+      number = shallow(<JSONNumber data={.10} />)
+      expect(number.state().data).toBe(.10)
     })
 
-    it("Stores a 0 instead of a string value", () => {
-      number = shallow(<JSONNumber value={"AppleSauce"} />)
+    it("Stores a 0 instead of a string data", () => {
+      number = shallow(<JSONNumber data={"AppleSauce"} />)
 
-      expect(typeof number.state().value === "number").toBe(true)
-      expect(number.state().value).toBe(0)
+      expect(typeof number.state().data).toBe("number")
+      expect(number.state().data).toBe(0)
     })
 
     it("Returns an error if given the wrong type", () => {
-      number = shallow(<JSONNumber value={"AppleSauce"} />)
+      number = shallow(<JSONNumber data={"AppleSauce"} />)
 
       expect(number.state().error).toBe("Invalid type. Please enter a number.")
     })
