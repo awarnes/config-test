@@ -20,24 +20,22 @@ export default class JSONNumber extends React.Component {
       }
     }
 
-    this.updatedata = this.updatedata.bind(this)
+    this.updateData = this.updateData.bind(this)
   }
 
-  updatedata (e) {
-    this.setState({ data: e.target.data })
+  updateData (e) {
+    this.setState({ data: e.target.value })
   }
 
   render () {
     const { data, error } = this.state
     return (
-      <div>
-        <TextField
-          type="number"
-          data={data}
-          onChange={this.updatedata}
-          errorText={error}
-        />
-      </div>
+      <TextField
+        type="number"
+        data={data}
+        onChange={this.updateData}
+        errorText={error}
+      />
     )
   }
 }

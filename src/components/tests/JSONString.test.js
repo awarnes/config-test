@@ -22,8 +22,27 @@ describe("The JSONString component performs basic functions", () => {
 
   describe("JSONString will not store", () => {
     it("booleans", () => {
-      string = shallow(<JSONString data />)
-      expect(typeof string.state().data).toBe()
+      string = shallow(<JSONString data={true} />) // eslint-disable-line
+      expect(typeof string.state().data).toBe("string")
+      expect(string.state().data).toBe("")
+    })
+
+    it("arrays", () => {
+      string = shallow(<JSONString data={["Apple", "Sauce"]} />)
+      expect(typeof string.state().data).toBe("string")
+      expect(string.state().data).toBe("")
+    })
+
+    it("objects", () => {
+      string = shallow(<JSONString data={{ apple: "sauce" }} />)
+      expect(typeof string.state().data).toBe("string")
+      expect(string.state().data).toBe("")
+    })
+
+    it("numbers", () => {
+      string = shallow(<JSONString data={15} />)
+      expect(typeof string.state().data).toBe("string")
+      expect(string.state().data).toBe("")
     })
   })
 })
