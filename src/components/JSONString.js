@@ -23,8 +23,8 @@ export default class JSONString extends React.Component {
     this.updateData = this.updateData.bind(this)
   }
 
-  updateData (e) {
-    this.setState({ data: e.target.value })
+  updateData (evt) {
+    this.setState({ data: evt.target.value })
   }
 
   render () {
