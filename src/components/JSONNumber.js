@@ -16,15 +16,15 @@ export default class JSONNumber extends React.Component {
     } else {
       this.state = {
         data: 0,
-        error: "Invalid type. Please enter a number."
+        error: "Invalid type. Please enter a Number."
       }
     }
 
     this.updateData = this.updateData.bind(this)
   }
 
-  updateData (e) {
-    this.setState({ data: e.target.value })
+  updateData (evt) {
+    this.setState({ data: evt.target.value })
   }
 
   render () {

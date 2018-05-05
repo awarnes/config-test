@@ -35,6 +35,6 @@ describe("The JSONNumber component performs basic functions", () => {
     it("returns an error if given the wrong type", () => {
       number = shallow(<JSONNumber data={"AppleSauce"} />)
 
-      expect(number.state().error).toBe("Invalid type. Please enter a number.")
+      expect(number.state().error).toBe("Invalid type. Please enter a Number.")
     })
 })
