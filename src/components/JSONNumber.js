@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { isNumber } from '../utils/TypeUtils'
 
 export default class JSONNumber extends React.Component {
     constructor (props) {

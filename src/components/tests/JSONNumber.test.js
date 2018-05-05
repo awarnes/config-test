@@ -21,7 +21,7 @@ describe("The JSONNumber component performs basic functions", () => {
       expect(number.props.value).toBe(.10)
     })
 
-    it("Does not store a string value", () => {
+    it("Stores a 0 instead of a string value", () => {
       number = <JSONNumber value={"AppleSauce"} />
 
       expect(typeof number.props.value === "number").toBe(true)
