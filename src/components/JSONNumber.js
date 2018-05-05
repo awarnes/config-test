@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { isNumber } from '../utils/TypeUtils'
+import TextField from 'material-ui/TextField'
 
 export default class JSONNumber extends React.Component {
   constructor (props) {
@@ -27,9 +28,15 @@ export default class JSONNumber extends React.Component {
   }
 
   render () {
+    const { value, error } = this.state
     return (
       <div>
-        <input type="number" value={this.state.value} onChange={this.updateValue}/>
+        <TextField
+          type="number"
+          value={value}
+          onChange={this.updateValue}
+          errorText={error}
+        />
       </div>
     )
   }

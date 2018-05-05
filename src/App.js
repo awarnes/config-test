@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import JSONNumber from './components/JSONNumber'
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div/>
-    );
+      <JSONNumber value={"Apple"} />
+    )
   }
 }
 
-export default App;
+export default App
