@@ -20,6 +20,12 @@ describe("The JSONString component performs basic functions", () => {
     expect(string.state().data).toBe("Apple Sauce")
   })
 
+  it("returns an error if given the wrong type", () => {
+    string = shallow(<JSONString data={42} />)
+
+    expect(string.state().error).toBe("Invalid type. Please enter a String.")
+  })
+
   describe("JSONString will not store", () => {
     it("booleans", () => {
       string = shallow(<JSONString data={true} />) // eslint-disable-line

@@ -12,27 +12,27 @@ describe("The JSONNumber component performs basic functions", () => {
       number = shallow(<JSONNumber data={10} />)
     })
 
-    it("Stores a number", () => {
+    it("stores a number", () => {
       expect(typeof number.state().data).toBe("number")
     })
 
-    it("Stores a specific number data", () => {
+    it("stores a specific number value", () => {
       expect(number.state().data).toBe(10)
     })
 
-    it("Can store decimal datas as well", () => {
+    it("stores decimal values as well", () => {
       number = shallow(<JSONNumber data={.10} />)
       expect(number.state().data).toBe(.10)
     })
 
-    it("Stores a 0 instead of a string data", () => {
+    it("stores a 0 instead of a string data", () => {
       number = shallow(<JSONNumber data={"AppleSauce"} />)
 
       expect(typeof number.state().data).toBe("number")
       expect(number.state().data).toBe(0)
     })
 
-    it("Returns an error if given the wrong type", () => {
+    it("returns an error if given the wrong type", () => {
       number = shallow(<JSONNumber data={"AppleSauce"} />)
 
       expect(number.state().error).toBe("Invalid type. Please enter a number.")
