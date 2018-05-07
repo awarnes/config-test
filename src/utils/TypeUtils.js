@@ -2,26 +2,26 @@
   https://toddmotto.com/understanding-javascript-types-and-reliable-type-checking/
 */
 
-const getTypes = (elem) => {
+const getType = (elem) => {
   return Object.prototype.toString.call(elem).slice(8, -1) // eslint-disable prefer-reflect
 }
 
 exports.isObject = (elem) => {
-  return getTypes(elem) === "Object"
+  return getType(elem) === "Object"
 }
 
 exports.isString = (elem) => {
-  return getTypes(elem) === "String"
+  return getType(elem) === "String"
 }
 
 exports.isNumber = (elem) => {
-  return getTypes(elem) === "Number"
+  return getType(elem) === "Number"
 }
 
 exports.isBoolean = (elem) => {
-  return getTypes(elem) === "Boolean"
+  return getType(elem) === "Boolean"
 }
 
 exports.isArray = (elem) => {
-  return getTypes(elem) === "Array"
+  return getType(elem) === "Array"
 }

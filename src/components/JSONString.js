@@ -29,12 +29,17 @@ export default class JSONString extends React.Component {
 
   render () {
     const { data, error } = this.state
+
     return (
       <TextField
         type="text"
+        underlineShow={false}
         value={data}
         errorText={error}
         onChange={this.updateData}
+        style={{ width: `${8 * data.length}px` }}
+        {...this.props}
+
       />
     )
   }

@@ -32,9 +32,11 @@ export default class JSONNumber extends React.Component {
     return (
       <TextField
         type="number"
-        data={data}
+        underlineShow={false}
+        value={data}
         onChange={this.updateData}
         errorText={error}
+        {...this.props}
       />
     )
   }

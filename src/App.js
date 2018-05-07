@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import JSONBoolean from './components/JSONBoolean'
+import JSONArray from './components/JSONArray'
 class App extends Component {
   render () {
     return (
-      <JSONBoolean data={false} checkbox />
+      <JSONArray data={["apple", true, 9]} />
     )
   }
 }
