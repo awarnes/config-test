@@ -40,7 +40,7 @@ export default class JSONArray extends React.Component {
     data.forEach(value => {
       switch(Object.prototype.toString.call(value).slice(8, -1)) {
         case "Boolean":
-          array.push(<JSONBoolean data={value} style={{marginLeft: '15px'}} />)
+          array.push(<JSONBoolean data={value} />)
           break
         case "String":
           array.push(<JSONString data={value} style={{marginLeft: '15px'}} />)
