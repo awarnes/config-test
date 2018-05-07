@@ -37,18 +37,20 @@ export default class JSONBoolean extends React.Component {
     const { data } = this.state
     const { checkbox } = this.props
     return (
-      <div>
+      <div style={{display: 'inline-block'}}>
       {
         checkbox ?
         <Checkbox
           checked={data}
           onCheck={this.updateData}
-          />
+        />
         :
         <DropDownMenu
           value={Number(data)}
           onChange={this.updateData}
           anchorOrigin={{vertical: "bottom", horizontal: "middle"}}
+          underlineStyle={{display: 'none'}} 
+          {...this.props}
         >
           <MenuItem value={0} primaryText="False" />
           <MenuItem value={1} primaryText="True" />
